@@ -32,7 +32,7 @@ This will stop and remove the containers `somesite_wp` and `somesite_db`. If you
 
 ## How to restore a wordpress website
 
-If you have previously used backup_site.sh to create a backup of a wordpress website, you can restore it by the following:
+If you have previously used `backup_site.sh` to create a backup of a wordpress website, you can restore it by the following:
 
 ```
 ./create_website.sh somesite
