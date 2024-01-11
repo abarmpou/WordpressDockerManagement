@@ -10,7 +10,7 @@ apt update
 apt install mariadb-client
 ```
 
-## How to create a wordpress website
+## How to create a wordpress docker website
 
 In the terminal type: `./create_website.sh somesite`
 
@@ -26,19 +26,19 @@ In the terminal type: `./change_url.sh -u https://www.example.com/some/site/ som
 
 This will change the wordpress url entries in `somesite_db` database to `https://www.example.com/some/site/`
 
-## How to backup a wordpress website
+## How to backup a wordpress docker website
 
 In the terminal type: `./backup_site.sh somesite`
 
 This will save the website files in a file `somesite_datestamp.zip` and the database in a file `somesite_datestamp.sql`. 
 
-## How to delete a wordpress website
+## How to delete a wordpress docker website
 
 In the terminal type: `./remove_site.sh somesite`
 
 This will stop and remove the containers `somesite_wp` and `somesite_db`. If you also want to remove the files from your local drive type: `rm -r somesite`.
 
-## How to restore a wordpress website
+## How to restore a wordpress docker website
 
 If you have previously used `backup_site.sh` to create a backup of a wordpress website, you can restore it by the following:
 
