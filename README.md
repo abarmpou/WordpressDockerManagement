@@ -2,6 +2,14 @@
 A collection of bash scripts for creating, and maintaining a wordpress website using docker.
 Tested in Ubuntu 22.04.
 
+### Prerequisite
+
+The only prerequisite is `mariadb-client` which can be installed by:
+```
+apt update
+apt install mariadb-client
+```
+
 ## How to create a wordpress website
 
 In the terminal type: `./create_website.sh somesite`
