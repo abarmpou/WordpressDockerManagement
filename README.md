@@ -20,6 +20,9 @@ If you want to create the site in a specific path type: `./create_website.sh -u 
 
 This will create a docker wordpress container `somsite_wp` and a database container `somesite_db` and will make the site accessible at `http://localhost:8101/some/site/`.
 
+To copy the database from an existing wordpress site you need to do: `mysqldump --no-tablespaces --single-transaction -u user -p DBNAME > backup.sql`
+and zip the website files by going into the directory `cd /var/www/html` `zip -r /home/user/backup.zip .` 
+
 ## How to change the wordpress URL of a website
 
 In the terminal type: `./change_url.sh -u https://www.example.com/some/site/ somesite`
