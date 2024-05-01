@@ -33,6 +33,8 @@ if ! command -v docker &> /dev/null; then
     echo "Docker is not installed. Installing docker..."
     apt-get update
     apt-get install docker
+# The following line may be needed if you get an installation error message
+#    apt-get install containerd=1.3.3-0ubuntu2
     apt install docker.io
     docker --version
 fi
