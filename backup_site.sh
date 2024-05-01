@@ -24,7 +24,7 @@ current_date=$(date +"%Y%m%d")  # Get the current date in the desired format
 
 
 # Log in to MySQL with password and select the database
-mysqldump --add-drop-table -u root -h "$container_ip" -p"$mysql_password" "$db_name" > "$site_name"_"$current_date".sql
+mysqldump --column-statistics=0 --add-drop-table -u root -h "$container_ip" -p"$mysql_password" "$db_name" > "$site_name"_"$current_date".sql
 
 cd "$site_name"/html || exit 1  # Navigate into the directory or exit if it fails
 
