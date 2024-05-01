@@ -13,7 +13,6 @@ shift $((OPTIND - 1))
 # Check if site_name is provided as an argument
 if [ -z "$1" ]; then
     echo "Please provide the site_name as an argument."
-    echo "Example: create_site.sh example
     exit 1
 fi
 
@@ -22,9 +21,11 @@ site_name="$1"
 # Check if url_option is not empty
 if [ -n "$url_option" ]; then
     echo "URL: $url_option"
+    # Add your logic here based on the condition
 else
-    url_option="https://$site_name"
+    url_option="https://research.dwi.ufl.edu/projects/$site_name"
     echo "URL: $url_option"
+    # Add logic for the case when the option is empty
 fi
 
 # Check if Docker is installed
@@ -94,7 +95,7 @@ echo "The IP address of the container ${site_name}_db is: $container_ip"
 
 docker run -e WORDPRESS_DB_USER="$site_name"_user -e WORDPRESS_DB_PASSWORD=password -e WORDPRESS_DB_NAME="$site_name"_db -p "$port":80 -v "$current_directory"/"$site_name"/html:/var/www/html --link "$site_name"_db:mysql --name "$site_name"_wp -d --restart unless-stopped wordpress:latest
 
-#wordpress:5.0.0 could be helpful for migrating an old site
+#wordpress:5.0.0 is helpful for migrating an old site
 
 
 while [ ! -f "$site_name"/html/index.php ]; do
