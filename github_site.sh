@@ -43,9 +43,15 @@ fi
 
 cd "$site_name"/github || exit 1 # Navigate into the directory or exit 
 
-#httrack "$url_option"
-
 httrack_folder="${url_option#*://}"
+
+if [ -d "$httrack_folder" ]; then
+echo "Running httrack update..."
+httrack --update
+else
+echo "Running httrack for the first time..."
+httrack "$url_option"
+fi
 
 cp -r ../html/wp-content/uploads "$httrack_folder"/wp-content/
 
