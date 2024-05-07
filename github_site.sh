@@ -71,6 +71,11 @@ string_to_replace="$httrack_folder"
 replacement_string="$git_user.github.io/$git_repo"
 find . -type f -exec sed -i "s|$string_to_replace|$replacement_string|g" {} +
 
+echo "Enforcing HTTPS..."
+string_to_replace="http://"
+replacement_string="https://"
+find . -type f -exec sed -i "s|$string_to_replace|$replacement_string|g" {} +
+
 echo "Removing HTTrack comments..."
 pattern="^<!-- Mirrored from"
 find . -type f -exec sed -i "/$pattern/d" {} +
