@@ -45,6 +45,9 @@ cd "$site_name"/github || exit 1 # Navigate into the directory or exit
 
 httrack_folder="${url_option#*://}"
 
+rm -r "$httrack_folder"
+rm -r "$git_repo"
+
 if [ -d "$httrack_folder" ]; then
 echo "Running httrack update..."
 httrack --update
