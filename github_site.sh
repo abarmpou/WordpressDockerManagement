@@ -45,6 +45,7 @@ cd "$site_name"/github || exit 1 # Navigate into the directory or exit
 
 httrack_folder="${url_option#*://}"
 
+#We remove the previous version because httrack --update converts the urls to png images into html links.
 rm -r "$httrack_folder"
 rm -r "$git_repo"
 
