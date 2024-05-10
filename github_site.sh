@@ -57,8 +57,6 @@ echo "Running httrack for the first time..."
 httrack "$url_option"
 fi
 
-cp -r ../html/wp-content/uploads "$httrack_folder"/wp-content/
-
 if [ -d "$httrack_folder/.git" ]; then
 	echo "$httrack_folder contains .git"
 	cd "$httrack_folder"
@@ -85,6 +83,8 @@ pattern="^<!-- Mirrored from"
 find . -type f -exec sed -i "/$pattern/d" {} +
 pattern="^<!-- Added by"
 find . -type f -exec sed -i "/$pattern/d" {} +
+
+cp -r ../../html/wp-content/uploads wp-content/
 
 git add -A
 git commit -m $(date +"%Y%m%d")
