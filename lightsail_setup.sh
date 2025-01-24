@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Setup swap memory
 sudo fallocate -l 1G /swapfile  # Allocate 1GB of disk space
 sudo chmod 600 /swapfile       # Set the correct permissions
