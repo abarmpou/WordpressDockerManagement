@@ -31,4 +31,7 @@ sudo mkdir /data/sites
 #git pull https://github.com/abarmpou/WordpressDockerManagement.git
 #copy keys into /root/.ssh/
 #sudo certbot --apache --register-unsafely-without-email
+#./create_site.sh codingplusfun
+#./restore_site.sh codingplusfun codingplusfun_timestamp
+#./github_site.sh -u abarmpou -r angelos -w https://codingplusfun.com codingplusfun
 
