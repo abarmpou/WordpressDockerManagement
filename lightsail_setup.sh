@@ -28,6 +28,7 @@ sudo mkdir /data
 sudo mkdir /data/sites
 
 #Other things you may want to do:
+#git pull https://github.com/abarmpou/WordpressDockerManagement.git
 #copy keys into /root/.ssh/
 #sudo certbot --apache --register-unsafely-without-email
 
