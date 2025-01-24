@@ -64,7 +64,7 @@ else
 	git clone "git@github.com:$git_user/$git_repo.git" 
 	cd "$git_repo" || exit 1
 	echo "../$httrack_folder"
-	mv ".git" "../$httrack_folder"
+	mv ".git" "../$httrack_folder/.git"
 	cd "../$httrack_folder"
 fi
 
