@@ -8,10 +8,10 @@ sudo swapon /swapfile          # Enable the swap file
 /swapfile none swap sw 0 0    # Make it permanent
 
 # Install components
-sudo apt update
-sudo apt install mariadb-client
-sudp apt install apache2
-sudo apt install certbot python3-certbot-apache
+sudo apt -y update
+sudo apt -y install mariadb-client
+sudp apt -y install apache2
+sudo apt -y install certbot python3-certbot-apache
 
 # Enable apache mods
 sudo a2enmod headers
