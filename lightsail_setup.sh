@@ -12,6 +12,7 @@ sudo apt -y update
 sudo apt -y install mariadb-client
 sudp apt -y install apache2
 sudo apt -y install certbot python3-certbot-apache
+sudo apt -y install git
 
 # Enable apache mods
 sudo a2enmod headers
