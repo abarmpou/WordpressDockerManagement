@@ -23,6 +23,10 @@ sudo a2enmod rewrite
 sudo a2enmod ssl
 sudo systemctl restart apache2
 
+sudo mkdir /data
+sudo mkdir /data/sites
 
-
+#Other things you may want to do:
+#copy keys into /root/.ssh/
+#sudo certbot --apache --register-unsafely-without-email
 
