@@ -44,10 +44,11 @@ image_name="mariadb"
 
 # Check if the Docker image exists
 if docker images "$image_name" | grep "$image_name" >/dev/null; then
-    echo "The Docker image '$image_name' exists."
+    echo "The Docker image '$image_name' exists. Checking for updates..."
+    docker pull "$image_name:latest"
 else
     echo "The Docker image '$image_name' does not exist. Pulling image..."
-    docker pull "$image_name"
+    docker pull "$image_name:latest"
 fi
 
 # Define the image name
@@ -55,7 +56,8 @@ image_name="wordpress"
 
 # Check if the Docker image exists
 if docker images "$image_name" | grep "$image_name" >/dev/null; then
-    echo "The Docker image '$image_name' exists."
+    echo "The Docker image '$image_name' exists. Checking for updates..."
+    docker pull "$image_name:latest"
 else
     echo "The Docker image '$image_name' does not exist. Pulling image..."  
     docker pull "$image_name:latest"
