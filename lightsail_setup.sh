@@ -13,6 +13,7 @@ sudo apt -y install mariadb-client
 sudp apt -y install apache2
 sudo apt -y install certbot python3-certbot-apache
 sudo apt -y install git
+sudo apt -y install zip
 sudo apt -y install unzip
 
 # Enable apache mods
