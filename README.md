@@ -12,11 +12,11 @@ apt install mariadb-client
 
 ## How to create a wordpress docker website
 
-In the terminal type: `./create_website.sh somesite`
+In the terminal type: `./create_site.sh somesite`
 
 This will create a docker wordpress container `somsite_wp` and a database container `somesite_db` and will make the site accessible at `http://localhost:8101/`.
 
-If you want to create the site in a specific path type: `./create_website.sh -u https://www.example.com/some/site/ somesite`
+If you want to create the site in a specific path type: `./create_site.sh -u https://www.example.com/some/site/ somesite`
 
 This will create a docker wordpress container `somsite_wp` and a database container `somesite_db` and will make the site accessible at `http://localhost:8101/some/site/`.
 
