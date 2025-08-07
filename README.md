@@ -6,7 +6,7 @@ Tested in Ubuntu 22.04.
 
 There are a few basic prerequisites which can be installed by:
 ```
-./lightsail_stup.sh
+./lightsail_setup.sh
 ```
 
 ## How to create a wordpress docker website
