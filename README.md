@@ -2,7 +2,7 @@
 A collection of bash scripts for creating, and maintaining a wordpress website using docker.
 Tested in Ubuntu 22.04.
 
-### Prerequisite
+### Prerequisites
 
 There are a few basic prerequisites which can be installed by:
 ```
