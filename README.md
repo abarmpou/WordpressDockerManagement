@@ -4,10 +4,9 @@ Tested in Ubuntu 22.04.
 
 ### Prerequisite
 
-The only prerequisite is `mariadb-client` which can be installed by:
+There are a few basic prerequisites which can be installed by:
 ```
-apt update
-apt install mariadb-client
+./lightsail_stup.sh
 ```
 
 ## How to create a wordpress docker website
