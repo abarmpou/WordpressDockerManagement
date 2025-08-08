@@ -102,9 +102,33 @@ docker run -e WORDPRESS_DB_USER="$site_name"_user -e WORDPRESS_DB_PASSWORD=passw
 #wordpress:5.0.0 is helpful for migrating an old site
 
 
-while [ ! -f "$site_name"/html/index.php ]; do
-    echo "Waiting for server to come alive..."
-    sleep 5
+required_files=(
+  "$site_name/html/index.php"
+  "$site_name/html/wp-config-sample.php"
+  "$site_name/html/wp-login.php"
+  "$site_name/html/wp-admin"
+  "$site_name/html/wp-includes"
+  "$site_name/html/wp-content"
+)
+
+echo "Waiting for WordPress files to be ready..."
+
+while true; do
+    all_present=true
+    for f in "${required_files[@]}"; do
+        if [ ! -e "$f" ]; then
+            all_present=false
+            break
+        fi
+    done
+
+    if [ "$all_present" = true ]; then
+        echo "All WordPress core files are present."
+        break
+    else
+        echo "Still waiting for WordPress files..."
+        sleep 3
+    fi
 done
 
 chown -R www-data:www-data "$site_name"/html
