@@ -104,7 +104,7 @@ docker run -e WORDPRESS_DB_USER="$site_name"_user -e WORDPRESS_DB_PASSWORD=passw
 
 required_files=(
   "$site_name/html/index.php"
-  "$site_name/html/wp-config-sample.php"
+  "$site_name/html/wp-config.php"
   "$site_name/html/wp-login.php"
   "$site_name/html/wp-admin"
   "$site_name/html/wp-includes"
