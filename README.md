@@ -6,7 +6,8 @@ Tested in Ubuntu 22.04.
 
 There are a few basic prerequisites which can be installed by:
 ```
-./lightsail_setup.sh
+git clone https://github.com/abarmpou/WordpressDockerManagement.git
+WordpressDockerManagement/lightsail_setup.sh
 ```
 
 ## How to create a wordpress docker website
