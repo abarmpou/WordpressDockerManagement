@@ -5,7 +5,7 @@ sudo fallocate -l 1G /swapfile  # Allocate 1GB of disk space
 sudo chmod 600 /swapfile       # Set the correct permissions
 sudo mkswap /swapfile          # Format the file as swap space
 sudo swapon /swapfile          # Enable the swap file
-/swapfile none swap sw 0 0    # Make it permanent
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab   # Make it permanent
 
 # Install components
 sudo apt -y update
