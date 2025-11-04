@@ -131,6 +131,14 @@ while true; do
     fi
 done
 
+# Disable exposing php version
+docker exec -i "$site_name"_wp sh -c 'cat > /usr/local/etc/php/conf.d/disable-expose-php.ini' <<'EOF' 
+expose_php = Off
+EOF
+
+docker restart "$site_name"_wp
+
+
 chown -R www-data:www-data "$site_name"/html
 
 # Extracting path after the domain
