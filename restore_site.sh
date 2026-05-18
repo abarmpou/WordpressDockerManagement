@@ -19,7 +19,7 @@ fi
 archive_name="$2"
 
 # Store the container IP in a variable
-container_ip=$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' "$site_name"_db)
+container_ip=$(docker inspect -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}' "$site_name"_db)
 
 # MySQL root password (replace 'your_password' with your actual password)
 mysql_password='root-password'
