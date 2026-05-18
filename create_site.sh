@@ -94,7 +94,7 @@ current_directory=$(pwd)
 
 docker run -e MYSQL_ROOT_PASSWORD=root-password -e MYSQL_USER="$site_name"_user -e MYSQL_PASSWORD=password -e MYSQL_DATABASE="$site_name"_db -v "$current_directory"/"$site_name"/database:/var/lib/mysql --name "$site_name"_db -d --restart unless-stopped mariadb
 
-container_ip=$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' "$site_name"_db)
+container_ip=$(docker inspect -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}' "$site_name"_db)
 echo "The IP address of the container ${site_name}_db is: $container_ip"
 
 docker run -e WORDPRESS_DB_USER="$site_name"_user -e WORDPRESS_DB_PASSWORD=password -e WORDPRESS_DB_NAME="$site_name"_db -p "$port":80 -v "$current_directory"/"$site_name"/html:/var/www/html --link "$site_name"_db:mysql --name "$site_name"_wp -d --restart unless-stopped wordpress:latest
